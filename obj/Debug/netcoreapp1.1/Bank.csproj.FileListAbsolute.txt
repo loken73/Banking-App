@@ -1,0 +1,8 @@
+c:\Users\f29pl\Desktop\Bank\bin\Debug\netcoreapp1.1\Bank.deps.json
+c:\Users\f29pl\Desktop\Bank\bin\Debug\netcoreapp1.1\Bank.runtimeconfig.json
+c:\Users\f29pl\Desktop\Bank\bin\Debug\netcoreapp1.1\Bank.runtimeconfig.dev.json
+c:\Users\f29pl\Desktop\Bank\obj\Debug\netcoreapp1.1\Bank.AssemblyInfo.cs
+c:\Users\f29pl\Desktop\Bank\bin\Debug\netcoreapp1.1\Bank.dll
+c:\Users\f29pl\Desktop\Bank\bin\Debug\netcoreapp1.1\Bank.pdb
+c:\Users\f29pl\Desktop\Bank\obj\Debug\netcoreapp1.1\Bank.dll
+c:\Users\f29pl\Desktop\Bank\obj\Debug\netcoreapp1.1\Bank.pdb
