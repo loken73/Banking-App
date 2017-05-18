@@ -10,7 +10,7 @@ namespace Bank
         {
             string [] Start = new string[]{
                 "Welcome to Big Bank Inc.",
-                "How can we be of service?",
+                "How can we be of service? Please enter the corresponding number.",
                 "1 - Create an Account",
                 "2 - Manage your Account",
                 "3 - Quit"
