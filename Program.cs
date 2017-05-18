@@ -80,6 +80,29 @@ namespace Bank
 
                         Console.WriteLine("You just withdrew ${0} from your {1} account.\n", currentAccount.accountAmount, manageAccountChoice);
                     }
+                    else if (depositOrWithdraw == "delete")
+                    {
+                        Console.WriteLine("Are you sure you want to delete an account?");
+                        string deleteAnswer = Console.ReadLine();
+                        Console.WriteLine();
+
+                        if (deleteAnswer == "yes")
+                        {
+                            Console.WriteLine("Please enter the account number you would like to delete.");
+                            string accountToDelete = Console.ReadLine();
+                            Console.WriteLine();
+
+                            int actToDelete = Int32.Parse(accountToDelete);
+
+                            foreach (Account act in currentUser.UserAccounts)
+                            {
+                                if (act.accountNumber == actToDelete)
+                                {
+                                    currentUser.UserAccounts.Remove(act);
+                                }
+                            }
+                        }
+                    }
 
 
 
