@@ -5,10 +5,6 @@ namespace Bank
 {
     public class Account
     {
-        public string firstName { get; set; }
-
-        public string lastName { get; set; }
-
         public int accountNumber { get; set; }
 
         public string accountType { get; set; }
@@ -17,6 +13,7 @@ namespace Bank
 
         public float initialInvestment(float init)
         {
+            this.accountAmount= 0;
             this.accountAmount = init;
 
             return accountAmount;

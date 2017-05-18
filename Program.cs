@@ -7,24 +7,37 @@ namespace Bank
     {
         static void Main(string[] args)
         {
-            List<string> CurrentMenu = new List<string> ();
-            string [] start = Menues.StartMenu();
-            CurrentMenu.InsertRange(0, start);
-            Menues.MenuMaker(CurrentMenu);
-            var homeScreenResponse = Console.ReadLine();
 
-            if (homeScreenResponse == "1")
-            {
+            string homeScreenResponse;
 
-            }
-            else if (homeScreenResponse == "2")
+            do
             {
+                string [] CurrentMenu = Menues.StartMenu();
+                Menues.MenuMaker(CurrentMenu);
+                homeScreenResponse = Console.ReadLine();
 
-            }
-            else 
-            {
-                Console.WriteLine("Thank you for choosing Big Bank Inc.");
-            }
+                if (homeScreenResponse == "1")
+                {
+                    User currentUser = new User();
+                    Menues.MenuMaker(Menues.CreateAccountMenu());
+
+                    Console.WriteLine("What is your first name?");
+                    currentUser.firstname = Console.ReadLine();
+
+                    Console.WriteLine("What is your last name?");
+                    currentUser.lastname = Console.ReadLine();
+
+                    Random number = new Random();
+
+                    currentUser.UserAccount.accountNumber = number.Next(100000000, 999999999);
+
+                    Console.WriteLine("Your new account number is {0}", currentUser.UserAccount.accountNumber);
+                }
+                else if (homeScreenResponse == "2")
+                {
+
+                }
+            } while (homeScreenResponse != "3");
         }
 
     }

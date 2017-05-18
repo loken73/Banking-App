@@ -19,7 +19,17 @@ namespace Bank
             return Start;
         }
 
-        public static void MenuMaker (List<string> menu)
+        public static string[] CreateAccountMenu() 
+        {
+            string [] newAccount = new string[]{ 
+                "Welcome to your new Account with Big Bank Inc.",
+                "You are going to have to tell us a little bit about yourself before we continue"
+            };
+
+            return newAccount;
+        }
+
+        public static void MenuMaker (string[] menu)
         {
             foreach (string item in menu)
             {
