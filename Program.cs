@@ -15,8 +15,8 @@ namespace Bank
             {
                 Account currentAccount = new Account();
 
-                string [] CurrentMenu = Menues.StartMenu();
-                Menues.MenuMaker(CurrentMenu);
+                string [] HomeMenu = Menues.StartMenu();
+                Menues.MenuMaker(HomeMenu);
                 homeScreenResponse = Console.ReadLine();
                 Console.WriteLine();
 
@@ -58,7 +58,7 @@ namespace Bank
                     Int32.TryParse(exactAccount, out exactAccountNumeric);
                     Console.WriteLine();
 
-                    Console.WriteLine("Would you like to deposit or withdraw?");
+                    Console.WriteLine("Would you like to deposit, withdraw or delete?");
                     string depositOrWithdraw = Console.ReadLine();
                     Console.WriteLine();
 
@@ -82,32 +82,42 @@ namespace Bank
                     }
                     else if (depositOrWithdraw == "delete")
                     {
-                        Console.WriteLine("Are you sure you want to delete an account?");
+                        Console.WriteLine("Are you sure you want to delete this account?");
                         string deleteAnswer = Console.ReadLine();
                         Console.WriteLine();
 
                         if (deleteAnswer == "yes")
                         {
-                            Console.WriteLine("Please enter the account number you would like to delete.");
-                            string accountToDelete = Console.ReadLine();
-                            Console.WriteLine();
-
-                            int actToDelete = Int32.Parse(accountToDelete);
-
                             foreach (Account act in currentUser.UserAccounts)
                             {
-                                if (act.accountNumber == actToDelete)
+                                if (act.accountNumber == exactAccountNumeric)
                                 {
                                     currentUser.UserAccounts.Remove(act);
+
+                                    Console.WriteLine("This account {0}, has been removed.\n", exactAccountNumeric);
+                                    Console.WriteLine("You now have {0} accounts with us.\n", currentUser.UserAccounts.Count);
+
                                 }
                             }
                         }
                     }
+                }
+                else if (homeScreenResponse == "3")
+                {
+                    string [] infoMenu = Menues.AccountInformationMenu();
+                    Menues.MenuMaker(infoMenu);
+                    string info = Console.ReadLine();
 
+                    if (info == "individual")
+                    {
+                        Console.WriteLine("Please enter the account number you would like to view");
+
+                        
+                    }
 
 
                 }
-            } while (homeScreenResponse != "3");
+            } while (homeScreenResponse != "4");
         }
 
     }

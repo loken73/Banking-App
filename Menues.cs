@@ -13,7 +13,8 @@ namespace Bank
                 "How can we be of service? Please enter the corresponding number.",
                 "1 - Create an Account",
                 "2 - Manage your Account",
-                "3 - Quit"
+                "3 - Account Information",
+                "4 - Quit"
             };
 
             return Start;
@@ -27,6 +28,16 @@ namespace Bank
             };
 
             return newAccount;
+        }
+
+        public static string[] AccountInformationMenu()
+        {
+            string [] info = new string []{
+                "Would you like to view information of an individual account or of all your accounts.",
+                "Please answer with the either individual or all to view the corresponding information"
+            };
+
+            return info;
         }
 
         public static void MenuMaker (string[] menu)
