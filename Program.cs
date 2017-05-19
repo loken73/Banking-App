@@ -111,8 +111,29 @@ namespace Bank
                     if (info == "individual")
                     {
                         Console.WriteLine("Please enter the account number you would like to view");
+                        int accountToView = Int32.Parse(Console.ReadLine());
 
-                        
+                        foreach (Account act in currentUser.UserAccounts)
+                        {
+                            if (act.accountNumber == accountToView)
+                            {
+                                Console.WriteLine("Account Number: {0}, Account Type: {1}, Account Balance: {2}", act.accountNumber, act.accountType, act.accountAmount);
+                            }
+                        }
+                    }
+                    else if (info == "all")
+                    {
+                        float actListTotal = 0;
+
+                        foreach (Account act in currentUser.UserAccounts)
+                        {
+                            Console.WriteLine("Account Number: {0}, Account Type: {1}, Account Balance: {2}", act.accountNumber, act.accountType, act.accountAmount);
+                            Console.WriteLine();
+
+                            actListTotal =+ act.accountAmount;
+                        }
+
+                        Console.WriteLine("The total of all your accounts is {0}", actListTotal);
                     }
 
 
