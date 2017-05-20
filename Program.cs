@@ -10,10 +10,10 @@ namespace Bank
 
             string homeScreenResponse;
             User currentUser = new User();
+            Account currentAccount = new Account();
 
             do
             {
-                Account currentAccount = new Account();
 
                 string [] HomeMenu = Menues.StartMenu();
                 Menues.MenuMaker(HomeMenu);
@@ -22,6 +22,7 @@ namespace Bank
 
                 if (homeScreenResponse == "1")
                 {
+                    currentAccount = new Account ();
                     currentAccount.accountNumber =  0;
                     currentAccount.accountAmount = 0;
 
@@ -117,7 +118,7 @@ namespace Bank
                         {
                             if (act.accountNumber == accountToView)
                             {
-                                Console.WriteLine("Account Number: {0}, Account Type: {1}, Account Balance: {2}", act.accountNumber, act.accountType, act.accountAmount);
+                                Console.WriteLine("Account Number: {0}, Account Type: {1}, Account Balance: ${2}\n", act.accountNumber, act.accountType, act.accountAmount);
                             }
                         }
                     }
@@ -127,13 +128,13 @@ namespace Bank
 
                         foreach (Account act in currentUser.UserAccounts)
                         {
-                            Console.WriteLine("Account Number: {0}, Account Type: {1}, Account Balance: {2}", act.accountNumber, act.accountType, act.accountAmount);
+                            Console.WriteLine("Account Number: {0}, Account Type: {1}, Account Balance: {2}\n", act.accountNumber, act.accountType, act.accountAmount);
                             Console.WriteLine();
 
-                            actListTotal =+ act.accountAmount;
+                            actListTotal += act.accountAmount;
                         }
 
-                        Console.WriteLine("The total of all your accounts is {0}", actListTotal);
+                        Console.WriteLine("The total of all your accounts is ${0}.", actListTotal);
                     }
 
 
